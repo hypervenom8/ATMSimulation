@@ -24,7 +24,7 @@ def register():
             
     with open(FILE_NAME, "a", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow([username, pin, 0.0, 0.0, 0.0, 0.0, 0.0])
+        writer.writerow([username, pin, 50000.0, 50000.0, 50000.0, 50000.0, 50000.0])
     print("✅ Registration successful! You can now log in.")
 
 #Login
@@ -44,7 +44,9 @@ def login():
 
 #Services
 def list_services(username):
-    print(""" 1. Bill Payments
+    print(""" 
+    ----- Services -----
+    1. Bill Payments
     2. Mobile Recharge
     3. Funds Transfer""")
 
@@ -66,7 +68,9 @@ def list_services(username):
             print("❌ User not found!")
             return
 
-        print("""1. Electricity Bill
+        print("""
+----- Payments -----f
+1. Electricity Bill
 2. Water Bill
 3. Gas Bill
 4. Loan Payment""")
@@ -372,3 +376,4 @@ def withdraw(username, amount):
             print("Thank you for using our ATM!")
             print("="*30 + "\n")
             
+
