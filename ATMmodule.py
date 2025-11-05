@@ -37,7 +37,7 @@ def login():
         next(reader)  
         for row in reader:
             if row[0] == username and row[1] == pin:
-                print(f"\n✅ Login successful! Welcome, {username}.")
+                print(f"\n Login successful! Welcome, {username}.")
                 atm_menu(username)
                 return
     print("❌ Invalid username or PIN.")
@@ -113,7 +113,7 @@ def list_services(username):
 
         # --- GAS BILL ---
         elif ch2 == 3:
-            print(f"🔥 Gas bill amount: ₹{user_data['GasBill']}")
+            print(f" Gas bill amount: ₹{user_data['GasBill']}")
             amount = float(input("Enter amount to pay: ₹"))
             balance = float(user_data["Balance"])
             bill_amount = float(user_data["GasBill"])
@@ -131,7 +131,7 @@ def list_services(username):
 
         # --- LOAN PAYMENT ---
         elif ch2 == 4:
-            print(f"💰 Loan amount pending: ₹{user_data['Loan']}")
+            print(f" Loan amount pending: ₹{user_data['Loan']}")
             amount = float(input("Enter amount to pay: ₹"))
             balance = float(user_data["Balance"])
             bill_amount = float(user_data["Loan"])
@@ -158,7 +158,7 @@ def list_services(username):
             writer.writeheader()
             writer.writerows(rows)
 
-        print(f"💰 Remaining Balance: ₹{user_data['Balance']}")
+        print(f" Remaining Balance: ₹{user_data['Balance']}")
         if ch2 == 1:
             print(f"📉 Outstanding Electricity Bill: ₹{user_data['ElectricityBill']}")
         elif ch2 == 2:
@@ -305,7 +305,7 @@ def atm_menu(username):
             change_pin(username)
 
         elif choice == "6":
-            print("👋 Logged out successfully.\n")
+            print(" Logged out successfully.\n")
             break
         
     
@@ -366,7 +366,7 @@ def withdraw(username, amount):
         choice = input("Do you want a printed receipt? (y/n): ").strip().lower()
         if choice == "y":
             print("\n" + "="*30)
-            print("           🏧 ATM RECEIPT")
+            print("            ATM RECEIPT")
             print("="*30)
             print(f"Username: {username}")
             print(f"Amount Withdrawn: ₹{amount:.2f}")
@@ -376,4 +376,5 @@ def withdraw(username, amount):
             print("Thank you for using our ATM!")
             print("="*30 + "\n")
             
+
 
